@@ -1,0 +1,140 @@
+:root{
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #6c63ff;
+    --accent-2: #00c2ff;
+    --border: #e6e9ef;
+}
+
+/* Improved UI styling for HomePage */
+
+.home-page{
+    padding: 48px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.home-container{
+    width:100%;
+    max-width:1100px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--border);
+    border-radius:16px;
+    box-shadow: 0 20px 40px rgba(16,24,40,0.08);
+    padding:32px;
+    backdrop-filter: blur(6px);
+    animation: fadeIn 300ms ease-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(4px)}
+    to{opacity:1; transform: translateY(0)}
+}
+
+.hp-header{margin-bottom:22px}
+.hp-header h1{margin:0;font-size:28px;letter-spacing:-0.01em}
+.hp-sub{color:var(--muted);margin:8px 0 0;max-width:65ch}
+
+.hp-form{display:block}
+.label{display:block;margin:16px 0 8px;font-weight:600;color:#111827}
+
+.raw-input{
+    width:100%;
+    min-height:140px;
+    padding:14px 12px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    resize:vertical;
+    background:var(--card);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.raw-input:focus{
+    outline:none;
+    border-color: color-mix(in srgb, var(--accent) 60%, white);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.platforms{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+.platform-option{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:linear-gradient(180deg,#fff,#f7f8ff);
+    color:#111827;
+    font-weight:500;
+    transition: transform 120ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.platform-option:hover{transform: translateY(-1px); box-shadow: 0 6px 16px rgba(16,24,40,0.08)}
+.platform-option input{transform:scale(1.05)}
+/* Style the label when the checkbox is checked */
+.platform-option:has(input:checked){
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:white;
+    border-color: transparent;
+    box-shadow: 0 6px 16px rgba(108,99,255,0.25);
+}
+
+.actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.btn-primary{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:white;
+    padding:12px 16px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    letter-spacing:0.02em;
+    box-shadow: 0 8px 18px rgba(108,99,255,0.25);
+    transition: filter 120ms ease, transform 120ms ease;
+}
+.btn-primary:hover{filter:brightness(.98); transform: translateY(-1px)}
+.btn-primary:active{transform: translateY(0)}
+.btn-ghost{
+    background:transparent;
+    border:1px solid var(--border);
+    padding:12px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    color:#111827;
+    transition: background 160ms ease, border-color 160ms ease;
+}
+.btn-ghost:hover{background:#f7f9fc; border-color: color-mix(in srgb, var(--border) 60%, var(--accent) 40%)}
+
+.results{margin-top:26px}
+.results-title{margin:0 0 12px;font-size:18px}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.post-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:16px;
+    border-radius:14px;
+    min-height:120px;
+    display:flex;
+    flex-direction:column;
+    box-shadow: 0 10px 22px rgba(16,24,40,0.06);
+    transition: transform 120ms ease, box-shadow 160ms ease;
+}
+.post-card:hover{transform: translateY(-2px); box-shadow: 0 14px 30px rgba(16,24,40,0.08)}
+.platform{color:var(--muted);font-size:13px;margin-bottom:8px}
+.post-text{white-space:pre-wrap;flex:1;color:#111827;line-height:1.55}
+
+.raw-response{
+    background:#f7f9fc;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    white-space:pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono";
+    overflow:auto;
+}
+
+@media (max-width:600px){
+    .home-container{padding:22px}
+    .hp-header h1{font-size:22px}
+    .posts-grid{grid-template-columns:1fr}
+}
