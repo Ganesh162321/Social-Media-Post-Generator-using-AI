@@ -1,0 +1,32 @@
+:root{
+	--bg: #f5f7fb;
+	--card: #ffffff;
+	--muted: #6b7280;
+	--accent: #6c63ff;
+	--accent-2: #00c2ff;
+	--border: #e6e9ef;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+	margin:0;
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: linear-gradient(180deg, var(--bg), #eef2ff);
+	color:#111827;
+}
+
+a{color:var(--accent); text-decoration: none}
+a:hover{filter:brightness(.95)}
+
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* Better focus outlines for accessibility */
+:focus-visible{
+	outline: none;
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+	border-radius: 8px;
+}
